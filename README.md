@@ -61,7 +61,7 @@ The following tutorial includes a summary of common errors and fixes we have exp
     In IntelliJ, you add everything but the "bin/prism" in front to the "command line arguments" field of the configuration.
     E.g. put in 
         ../../case-studies/BigMec.prism ../../case-studies/BigMec.props -const N=1 -ii -smg_opts 2
-    in order run on the model BigMec with the BigMec.props property file. We set the free scaling constant of the model N to 1. We use -ii, so bounded value iteration (aka interval iteration). And we set smg_opts to 2, which the method can use to differentiate variants of the algorithm. E.g. 2 corresponds to sound value iteration (unless we changed it in the meantime).
+    in order run on the model BigMec with the BigMec.props property file. We set the free scaling constant of the model N to 1. We use `-ii`, so bounded value iteration (aka interval iteration). And we set smg_opts to 2, which the method can use to differentiate variants of the algorithm. E.g. 2 corresponds to sound value iteration (unless we changed it in the meantime). To use SVI for SMG, we use `-svi` flag. 
 
 - How to modify the code:
     Often you can restrict your interest to very specific methods. While PRISM has a huge body of code to handle command line parameters, parsing models and preparing everything for the actual model checking, the method of interest typically is located in explicit/STPGModelChecker (at least for our research), as this class contains the algorithms to model check an STPG (e.g. VI, SI and QP). 
