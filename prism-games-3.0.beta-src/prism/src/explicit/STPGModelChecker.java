@@ -1906,26 +1906,6 @@ public class STPGModelChecker extends ProbModelChecker
         }
         stepBoundReachNew[s] = reachVal;
         stepBoundStayNew[s] = stayVal;
-
-//        System.out.println("state:" + s);
-//        if(!min){
-//          System.out.println("is a Maximizer state");
-//        }
-//        else{
-//          System.out.println("is a Minimizer state");
-//        }
-//        if(!besStates.get(s)){
-//          System.out.println("and is NOT in BES");
-//        }
-//        else{
-//          System.out.println("is in BES");
-//        }
-//        if(!mecStates.get(s)){
-//          System.out.println("is NOT in MEC");
-//        }
-//        else{
-//          System.out.println("is in MEC");
-//        }
         double ub1 =stepBoundReachNew[s] + stepBoundStayNew[s] * upperBound[sccs.getSCCIndex(s)];
         double ub2 = stepBoundReach[s] + stepBoundStay[s] * upperBound[sccs.getSCCIndex(s)];
         if((stepBoundReachNew[s] + stepBoundStayNew[s] * upperBound[sccs.getSCCIndex(s)] <= stepBoundReach[s]+stepBoundStay[s]*upperBound[sccs.getSCCIndex(s)])){
